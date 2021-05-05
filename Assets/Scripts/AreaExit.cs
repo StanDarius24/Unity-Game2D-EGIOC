@@ -14,6 +14,7 @@ public class AreaExit : MonoBehaviour
     public string areaTransitionName;
 
     public AreaEntrance area;
+    private int i=0;
 
     private bool shouldLoadAfterFade;
 
@@ -29,7 +30,9 @@ public class AreaExit : MonoBehaviour
     		//SceneManager.LoadScene(areaToLoad);
 
             shouldLoadAfterFade = true;
-
+            
+            
+           
             UIFade.instance.FadeToBlack();
 
             PlayerControler.instance.areaTransitionName = areaTransitionName;
@@ -46,6 +49,8 @@ public class AreaExit : MonoBehaviour
             if(waitToLoad <= 0)
             {
                     shouldLoadAfterFade=false;
+                    AudioManager.instance.StopMusic();
+                    AudioManager.instance.PlaySFX(1);
                     SceneManager.LoadScene(areaToLoad);
             }
         }

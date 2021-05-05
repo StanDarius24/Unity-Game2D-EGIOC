@@ -11,6 +11,7 @@ public class UIFade : MonoBehaviour
 
     public bool shouldFadeToBlack;
     public bool shouldFadeFromBlack;
+    private int x=1;
 
     // Start is called before the first frame update
    void Start () {
@@ -22,7 +23,7 @@ public class UIFade : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {   
         if (shouldFadeToBlack)
         {
             fadeScreen.color = new Color(fadeScreen.color.r, fadeScreen.color.g, fadeScreen.color.b, Mathf.MoveTowards(fadeScreen.color.a, 1f, fadeSpeed * Time.deltaTime));
@@ -42,6 +43,7 @@ public class UIFade : MonoBehaviour
                 shouldFadeFromBlack = false;
             }
         }
+
     }
 
      public void FadeToBlack()
@@ -55,5 +57,9 @@ public class UIFade : MonoBehaviour
     {
         shouldFadeToBlack = false;
         shouldFadeFromBlack = true;
+        AudioManager.instance.StopMusic();
+        AudioManager.instance.PlaySFX(x);
+        x++;
+        x=x%2;
     }
 }

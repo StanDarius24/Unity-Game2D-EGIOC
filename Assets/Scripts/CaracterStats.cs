@@ -41,7 +41,8 @@ public class CaracterStats : MonoBehaviour
 		
         if(Input.GetKeyDown(KeyCode.K))
         {
-            AddExp(1000);
+            int esxp = Random.Range(10,1000);
+            AddExp( esxp );
         }
 	}
 
@@ -80,4 +81,7 @@ public class CaracterStats : MonoBehaviour
             currentEXP = 0;
         }
     }
+
+
+    
 }
