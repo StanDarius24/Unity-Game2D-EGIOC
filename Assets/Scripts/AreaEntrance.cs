@@ -13,7 +13,7 @@ public string transitionName;
         {
         	PlayerControler.instance.transform.position = transform.position;
         }
-
+        
         UIFade.instance.FadeFromBlack();
     }
 

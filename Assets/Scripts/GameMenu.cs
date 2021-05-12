@@ -13,7 +13,7 @@ public class GameMenu : MonoBehaviour
     public Image charImage;
     public GameObject charStatHolder;
     private CaracterStats[] playerStats;
-
+    
     public CaracterStats xd;
     
     public GameObject[] windows;
@@ -22,9 +22,16 @@ public class GameMenu : MonoBehaviour
         
     }
 
+	
+    
     // Update is called once per frame
     void Update()
     {
+    	
+		
+            
+        
+
         if(Input.GetButtonDown("Fire2"))
         {
             if(theMenu.activeInHierarchy)
@@ -50,7 +57,7 @@ public class GameMenu : MonoBehaviour
         expSlider.value = xd.currentEXP;
         charImage.sprite = xd.charIamge;
 
-        /*
+        
         playerStats = GameManager.instance.playerStats;
 
         for(int i=0;i<playerStats.Length;i++)
@@ -67,6 +74,39 @@ public class GameMenu : MonoBehaviour
         {
             charStatHolder.SetActive(false);
         }
-        }*/
+        }
     }
+
+    public void ToggleWindow(int windowNumber)
+    {   UpdateMainStats();
+        for(int i = 0; i < windows.Length;i++)
+        {
+            if(i == windowNumber)
+            {
+                windows[i].SetActive(!windows[i].activeInHierarchy);
+            } else
+            {
+                windows[i].SetActive(false);
+            }
+        }
+    }
+    public void print()
+    {
+        print("Click");
+    }
+
+      public void CloseMenu()
+    {
+        for(int i = 0; i < windows.Length; i++)
+        {
+            windows[i].SetActive(false);
+        }
+
+        theMenu.SetActive(false);
+
+
+
+        
+    }
+   
 }
