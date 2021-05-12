@@ -396,9 +396,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lines:
-  - Hei
-  - Salut
-  - CF?
+  - Salut!
+  - Crezi ca poti distruge dragonul din mina?
+  - Din cauza lui nu putem intra in ea!
 --- !u!61 &441544763
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4231,6 +4231,10 @@ PrefabInstance:
     - target: {fileID: 3401960359324148253, guid: 404f2b541b8fb024db32a675907f34a3, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 3401960359324148253, guid: 404f2b541b8fb024db32a675907f34a3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3401960360802928450, guid: 404f2b541b8fb024db32a675907f34a3, type: 3}
       propertyPath: m_IsActive
